@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Admin.vue'
+import Client from "../layouts/Client";
+import Admin from "../layouts/Admin";
+import Home from '../views/client/Home.vue'
 
 Vue.use(VueRouter)
 
@@ -8,14 +10,16 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    layouts: Client
   },
   {
     path: '/admin',
     name: 'Admin',
     component: function () {
-      return import( '../views/Admin.vue')
-    }
+      return import( '../views/admin/Home.vue')
+    },
+    layouts: Admin
   }
 ]
 

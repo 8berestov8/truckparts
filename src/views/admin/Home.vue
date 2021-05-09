@@ -5,6 +5,13 @@
 
     <v-app-bar app>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-spacer></v-spacer>
+      <v-app-bar-title>Панель управления</v-app-bar-title>
+      <v-spacer></v-spacer>
+      <v-btn>
+        <v-icon>mdi-exit-to-app</v-icon>
+      </v-btn>
+
     </v-app-bar>
 
     <v-main>
@@ -14,7 +21,7 @@
     </v-main>
 
     <v-footer app class="footer">
-      <h3>© 2021 TruckParts. All rights reserved.</h3>
+      <v-footer-title>© 2021 TruckParts. All rights reserved.</v-footer-title>
     </v-footer>
   </v-app>
 </template>
@@ -26,7 +33,6 @@ export default {
   data: () => ({
     drawer: true
   }),
-  components: {},
 }
 </script>
 
