@@ -1,26 +1,64 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Client from "../layouts/Client";
-import Admin from "../layouts/Admin";
-import Home from '../views/client/Home.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
+
+  //Users route
   {
     path: '/',
     name: 'Home',
-    component: Home,
-    layouts: Client
+    component: function () {
+      return import('../views/client/Home')
+    },
+    meta: {
+      layouts: 'Client'
+    }
   },
+
+
+  // Admin route
   {
     path: '/admin',
-    name: 'Admin',
+    name: 'Shop',
     component: function () {
-      return import( '../views/admin/Home.vue')
+      return import( '../views/admin/Shop.vue')
     },
-    layouts: Admin
-  }
+    meta: {
+      layouts: 'Admin'
+    }
+  },
+  {
+    path: '/systems',
+    name: 'Systems',
+    component: function () {
+      return import( '../views/admin/Systems.vue')
+    },
+    meta: {
+      layouts: 'Admin'
+    }
+  },
+  {
+    path: '/contents',
+    name: 'Contents',
+    component: function () {
+      return import( '../views/admin/Contents.vue')
+    },
+    meta: {
+      layouts: 'Admin'
+    }
+  },
+  {
+    path: '/users',
+    name: 'Users',
+    component: function () {
+      return import( '../views/admin/Users.vue')
+    },
+    meta: {
+      layouts: 'Admin'
+    }
+  },
 ]
 
 const router = new VueRouter({
